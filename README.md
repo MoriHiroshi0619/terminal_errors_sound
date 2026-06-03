@@ -17,8 +17,8 @@ sudo apt install pulseaudio-utils
 ```
 *(O instalador verificará essa dependência automaticamente).*
 
-## Estrutura
-Basta adicionar novos arquivos de áudio na pasta `sounds/` do repositório antes de instalar, ou após a instalação em `~/.terminal-error-sounds/sounds/`.
+## Mudar efeitos sonoros
+Basta adicinar/remover os efeitos sonoros salvos em `~/.terminal-error-sounds/sounds/` após a instalação 
 
 ## Instalação
 Clone este repositório e execute o script de inicialização:
@@ -38,3 +38,15 @@ Para remover o utilitário, basta executar o script de desinstalação:
 ./uninstall.sh
 ```
 Isso removerá a pasta de arquivos e limpará a linha adicionada ao arquivo `.bashrc` ou `.zshrc`.
+
+## Gostou da ideia?
+
+Este repo nasceu porque eu achei engraçado transformar erros do terminal em momentos de entretenimento.
+
+Se você também acha que uma mensagem de erro fica melhor acompanhada de um meme sonoro, fique à vontade para usar, adaptar e adicionar seus próprios áudios.
+
+E se o projeto arrancou uma risada ou foi útil para você, deixe uma ⭐ no repositório para fortalecer. Afinal, manter a seriedade no terminal é opcional.
+
+<p align="center">
+  <img src="./hackerman.gif" alt="Hackerman em ação" width="800">
+</p>
