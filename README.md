@@ -36,6 +36,13 @@ source ~/.bashrc # para Bash
 source ~/.zshrc # para Zsh
 ```
 
+## Atualização
+Para atualizar o utilitário com novos scripts ou arquivos baixados do repositório, execute o script de atualização:
+```bash
+./update.sh
+```
+Isso desinstalará a versão anterior e fará uma instalação limpa automaticamente.
+
 ## Desinstalação
 Para remover o utilitário, basta executar o script de desinstalação:
 ```bash
