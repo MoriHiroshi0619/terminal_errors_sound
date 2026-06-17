@@ -1,9 +1,11 @@
 # Terminal Error Sounds
 
-Este projeto permite reproduzir um som aleatório sempre que um comando falhar no terminal (retornar um código de saída diferente de zero).
+Este projeto permite reproduzir um som aleatório sempre que um comando falhar no terminal (retornar um código de saída diferente de zero) ou for interrompido pelo usuário (pressionando `Ctrl + C`).
 
 ## Funcionalidades
 - Suporte para Bash e Zsh
+- Diferencia falhas reais de execuções interrompidas (`Ctrl + C`)
+- Pastas de áudio separadas para erros e interrupções
 - Instalação e desinstalação automatizadas
 - Impede a repetição do mesmo som consecutivamente
 - Silencia mensagens de background (jobs) no terminal
@@ -18,7 +20,9 @@ sudo apt install pulseaudio-utils
 *(O instalador verificará essa dependência automaticamente).*
 
 ## Mudar efeitos sonoros
-Basta adicinar/remover os efeitos sonoros salvos em `~/.terminal-error-sounds/sounds/` após a instalação 
+Basta adicionar/remover os efeitos sonoros salvos nas respectivas pastas após a instalação:
+- `~/.terminal-error-sounds/sounds/errors/` para sons tocados quando comandos falham.
+- `~/.terminal-error-sounds/sounds/interrupt/` para sons tocados ao interromper com `Ctrl + C`. 
 
 ## Instalação
 Clone este repositório e execute o script de inicialização:
@@ -32,12 +36,26 @@ source ~/.bashrc # para Bash
 source ~/.zshrc # para Zsh
 ```
 
+## Atualização
+Para atualizar o utilitário com novos scripts ou arquivos baixados do repositório, execute o script de atualização:
+```bash
+./update.sh
+```
+Isso desinstalará a versão anterior e fará uma instalação limpa automaticamente.
+
 ## Desinstalação
 Para remover o utilitário, basta executar o script de desinstalação:
 ```bash
 ./uninstall.sh
 ```
 Isso removerá a pasta de arquivos e limpará a linha adicionada ao arquivo `.bashrc` ou `.zshrc`.
+
+## Debug
+Caso queira visualizar informações detalhadas sobre a execução e a escolha dos áudios, você pode ativar o modo de debug exportando a seguinte variável:
+```bash
+export TERMINAL_SOUNDS_DEBUG=true
+```
+Isso fará com que o script exiba logs com o comando executado, exit code, evento identificado e arquivo de áudio tocado.
 
 ## Gostou da ideia?
 

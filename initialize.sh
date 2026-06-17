@@ -14,14 +14,19 @@ fi
 INSTALL_DIR="$HOME/.terminal-error-sounds"
 
 mkdir -p "$INSTALL_DIR"
-mkdir -p "$INSTALL_DIR/sounds"
+mkdir -p "$INSTALL_DIR/sounds/errors"
+mkdir -p "$INSTALL_DIR/sounds/interrupt"
 
 cp shell/bash.sh "$INSTALL_DIR/"
 cp shell/zsh.sh "$INSTALL_DIR/"
 
 # Copiar sons apenas se existirem
-if ls sounds/* >/dev/null 2>&1; then
-    cp sounds/* "$INSTALL_DIR/sounds/"
+if [ -d "sounds/errors" ] && [ "$(ls -A sounds/errors 2>/dev/null)" ]; then
+    cp -r sounds/errors/* "$INSTALL_DIR/sounds/errors/"
+fi
+
+if [ -d "sounds/interrupt" ] && [ "$(ls -A sounds/interrupt 2>/dev/null)" ]; then
+    cp -r sounds/interrupt/* "$INSTALL_DIR/sounds/interrupt/"
 fi
 
 
